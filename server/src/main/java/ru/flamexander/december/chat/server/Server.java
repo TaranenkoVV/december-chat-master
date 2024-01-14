@@ -52,6 +52,7 @@ public class Server {
         for (ClientHandler clientHandler : clients) {
             if(clientHandler.getUsername().equals(receiverUsername)) {
                 clientHandler.sendMessage("Private Message from " + sender.getUsername() + " to " + receiverUsername + ": " + message);
+                sender.sendMessage("Private Message from " + sender.getUsername() + " to " + receiverUsername + ": " + message);
             }
         }
     }
