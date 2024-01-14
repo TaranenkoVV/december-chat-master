@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class ClientHandler {
+
     private Server server;
     private Socket socket;
     private DataOutputStream out;
@@ -35,9 +36,18 @@ public class ClientHandler {
                         }
                         if (message.startsWith("/w ")) {
                             // TODO homework
+                            String[] parts = new String[3];
+                            parts = message.split(" ", 3);
+                            if (parts.length == 3) {
+                                String receiverUsername = parts[1].trim();
+                                String userMessage = parts[2];
+                                server.sendPrivateMessage(this, receiverUsername, userMessage);
+                            }
+                            continue;
                         }
                     }
                     server.broadcastMessage(username + ": " + message);
+
                 }
             } catch (IOException e) {
                 e.printStackTrace();
