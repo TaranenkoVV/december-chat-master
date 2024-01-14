@@ -48,6 +48,6 @@ public class Server {
     }
 
     public synchronized void sendPrivateMessage(ClientHandler sender, String receiverUsername, String message) {
-        // TODO homework
+        // TODO homework.
     }
 }

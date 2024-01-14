@@ -34,7 +34,7 @@ public class ClientHandler {
                             break;
                         }
                         if (message.startsWith("/w ")) {
-                            // TODO homework
+                            // TODO homework.
                         }
                     }
                     server.broadcastMessage(username + ": " + message);
